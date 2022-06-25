@@ -5,7 +5,7 @@ import 'package:snakegame/view/snakehome.dart';
 void movingSnake(){
 
   switch (currentDirection){
-    case snakeDirection.UP:{
+    case SnakeDirection.UP:{
       
       if(snakePos.last<totalRowSize){
         snakePos.add(snakePos.last-totalRowSize+totalBoxCount);
@@ -14,7 +14,7 @@ void movingSnake(){
       }
     }
     break;
-    case snakeDirection.DOWN:{
+    case SnakeDirection.DOWN:{
       if(snakePos.last+totalRowSize>totalBoxCount){
         snakePos.add(snakePos.last+totalRowSize-totalBoxCount);
       }else{
@@ -22,7 +22,7 @@ void movingSnake(){
       }
     }
     break;
-    case snakeDirection.LEFT:{
+    case SnakeDirection.LEFT:{
 
       if(snakePos.last%totalRowSize==0){
         snakePos.add(snakePos.last-1+totalRowSize);
@@ -31,7 +31,7 @@ void movingSnake(){
       }
     }
     break;
-    case snakeDirection.RIGHT:{
+    case SnakeDirection.RIGHT:{
         if(snakePos.last%totalRowSize==29){
           snakePos.add(snakePos.last+1-totalRowSize);
         }else{

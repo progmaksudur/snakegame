@@ -18,8 +18,8 @@ class SnakeHome extends StatefulWidget {
   State<SnakeHome> createState() => _SnakeHomeState();
 }
 
-enum snakeDirection{UP,DOWN,LEFT,RIGHT}
-var currentDirection=snakeDirection.RIGHT;
+enum SnakeDirection{UP,DOWN,LEFT,RIGHT}
+var currentDirection=SnakeDirection.RIGHT;
 List snakePos=[0,1,2];
 int foodPos=554;
 int totalRowSize=30;
@@ -77,19 +77,19 @@ class _SnakeHomeState extends State<SnakeHome> {
               )),
               Expanded(flex: 3,child: GestureDetector(
                 onVerticalDragUpdate: (details){
-                    if(details.delta.dy<0 && currentDirection!=snakeDirection.DOWN){
-                      currentDirection=snakeDirection.UP;
+                    if(details.delta.dy<0 && currentDirection!=SnakeDirection.DOWN){
+                      currentDirection=SnakeDirection.UP;
                     }
-                    else if(details.delta.dy>0 && currentDirection!=snakeDirection.UP){
-                      currentDirection=snakeDirection.DOWN;
+                    else if(details.delta.dy>0 && currentDirection!=SnakeDirection.UP){
+                      currentDirection=SnakeDirection.DOWN;
                     }
                 },
                 onHorizontalDragUpdate: (details){
-                  if(details.delta.dx<0 && currentDirection!=snakeDirection.RIGHT){
-                    currentDirection=snakeDirection.LEFT;
+                  if(details.delta.dx<0 && currentDirection!=SnakeDirection.RIGHT){
+                    currentDirection=SnakeDirection.LEFT;
                   }
-                  else if(details.delta.dx>0 && currentDirection!=snakeDirection.LEFT){
-                    currentDirection=snakeDirection.RIGHT;
+                  else if(details.delta.dx>0 && currentDirection!=SnakeDirection.LEFT){
+                    currentDirection=SnakeDirection.RIGHT;
                   }
                 },
                 child: GridView.builder(
@@ -109,8 +109,6 @@ class _SnakeHomeState extends State<SnakeHome> {
                       }
 
 
-
-                    BlankPixel();
                 }),
               ),
               ),
